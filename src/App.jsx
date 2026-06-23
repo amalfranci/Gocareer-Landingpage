@@ -11,11 +11,20 @@ import { Footer } from "@/components/landing/Footer";
 import { ScrollProgress } from "@/components/landing/ScrollProgress";
 import { BackToTop } from "@/components/landing/BackToTop";
 import { AmbientBackground } from "@/components/landing/AmbientBackground";
+import { Toaster } from "@/components/ui/sonner";
 import { PrivacyPolicyPage } from "@/pages/PrivacyPolicyPage";
+import { DeleteMyAccountPage } from "@/pages/DeleteMyAccountPage";
+
+function getPage() {
+  const pathname = window.location.pathname.replace(/\/$/, "") || "/";
+  if (pathname === "/deleteMyAccount") return "delete-account";
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("page") === "privacy-policy") return "privacy-policy";
+  return "home";
+}
 
 export default function App() {
-  const params = new URLSearchParams(window.location.search);
-  const isPrivacyPolicyPage = params.get("page") === "privacy-policy";
+  const page = getPage();
 
   return (
     <div className="relative min-h-screen bg-background overflow-x-hidden">
@@ -23,8 +32,10 @@ export default function App() {
       <ScrollProgress />
       <Navbar />
       <main className="relative z-10">
-        {isPrivacyPolicyPage ? (
+        {page === "privacy-policy" ? (
           <PrivacyPolicyPage />
+        ) : page === "delete-account" ? (
+          <DeleteMyAccountPage />
         ) : (
           <>
             <Hero />
@@ -40,6 +51,7 @@ export default function App() {
       </main>
       <Footer />
       <BackToTop />
+      <Toaster richColors position="top-center" />
     </div>
   );
 }
