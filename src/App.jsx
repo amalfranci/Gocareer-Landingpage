@@ -17,7 +17,7 @@ import { DeleteMyAccountPage } from "@/pages/DeleteMyAccountPage";
 
 function getPage() {
   const pathname = window.location.pathname.replace(/\/$/, "") || "/";
-  if (pathname === "/deletemyaccount") return "delete-account";
+  if (pathname === "/deleteMyAccount") return "delete-account";
   const params = new URLSearchParams(window.location.search);
   if (params.get("page") === "privacy-policy") return "privacy-policy";
   return "home";
