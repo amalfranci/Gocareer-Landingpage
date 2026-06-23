@@ -28,7 +28,7 @@ const columns = [
       { label: "Help center", href: "#" },
       { label: "Guides", href: "#" },
       { label: "Privacy Policy", href: "/?page=privacy-policy" },
-      { label: "Delete My Account", href: "/deleteMyAccount" },
+      { label: "Delete My Account", href: "/deletemyaccount" },
     ],
   },
 ];
