@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import logo from "@/assets/gocareer-logo.png";
+import logo from "@public/Logo/logo.png";
 
 const links = [
   { label: "Features", href: "/#features", id: "features" },
@@ -12,6 +12,7 @@ const links = [
   { label: "Platform", href: "/#platform", id: "platform" },
   { label: "Testimonials", href: "/#testimonials", id: "testimonials" },
   { label: "Privacy Policy", href: "/?page=privacy-policy", id: "privacy-policy" },
+  { label: "Terms and Conditions", href: "/?page=terms-and-conditions", id: "terms-and-conditions" },
 ];
 
 export function Navbar() {
@@ -63,7 +64,7 @@ export function Navbar() {
               <img
                 src={logo}
                 alt="GoCareer — Your Gateway To Global Careers"
-                className="h-11 md:h-12 w-auto"
+                className="h-8 md:h-9 w-auto"
               />
             </motion.a>
 
@@ -92,10 +93,17 @@ export function Navbar() {
             <div className="flex items-center gap-3">
               <motion.div whileHover={reduced ? {} : { scale: 1.03 }} whileTap={reduced ? {} : { scale: 0.97 }}>
                 <Button
+                  asChild
                   size="sm"
                   className="hidden md:inline-flex bg-gradient-primary text-primary-foreground hover:opacity-90 rounded-xl shadow-glow btn-shine"
                 >
-                  Get started
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.gocareer.android&hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get started
+                  </a>
                 </Button>
               </motion.div>
               <Button
@@ -136,7 +144,7 @@ export function Navbar() {
             >
               <div className="flex items-center justify-between mb-8">
                 <a href="/" className="inline-flex">
-                  <img src={logo} alt="GoCareer" className="h-9 w-auto" />
+                  <img src={logo} alt="GoCareer" className="h-7 w-auto" />
                 </a>
                 <Button
                   variant="ghost"
@@ -167,8 +175,14 @@ export function Navbar() {
                 ))}
               </nav>
               <div className="mt-8 flex flex-col gap-3">
-                <Button className="rounded-xl w-full bg-gradient-primary text-primary-foreground btn-shine">
-                  Get started
+                <Button asChild className="rounded-xl w-full bg-gradient-primary text-primary-foreground btn-shine">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.gocareer.android&hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get started
+                  </a>
                 </Button>
               </div>
             </motion.div>

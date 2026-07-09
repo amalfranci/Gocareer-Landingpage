@@ -90,11 +90,18 @@ export function Hero() {
           >
             <motion.div whileHover={buttonHover} whileTap={buttonTap}>
               <Button
+                asChild
                 size="lg"
                 className="bg-gradient-primary text-primary-foreground hover:opacity-90 rounded-2xl px-7 h-12 shadow-glow btn-shine"
               >
-                Get Started
-                <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-0.5" />
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.gocareer.android&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get Started
+                  <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-0.5" />
+                </a>
               </Button>
             </motion.div>
             <motion.div whileHover={buttonHover} whileTap={buttonTap}>

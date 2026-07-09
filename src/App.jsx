@@ -13,6 +13,7 @@ import { BackToTop } from "@/components/landing/BackToTop";
 import { AmbientBackground } from "@/components/landing/AmbientBackground";
 import { Toaster } from "@/components/ui/sonner";
 import { PrivacyPolicyPage } from "@/pages/PrivacyPolicyPage";
+import { TermsAndConditionsPage } from "@/pages/TermsAndConditionsPage";
 import { DeleteMyAccountPage } from "@/pages/DeleteMyAccountPage";
 
 function getPage() {
@@ -20,6 +21,7 @@ function getPage() {
   if (pathname === "/deleteMyAccount") return "delete-account";
   const params = new URLSearchParams(window.location.search);
   if (params.get("page") === "privacy-policy") return "privacy-policy";
+  if (params.get("page") === "terms-and-conditions") return "terms-and-conditions";
   return "home";
 }
 
@@ -34,6 +36,8 @@ export default function App() {
       <main className="relative z-10">
         {page === "privacy-policy" ? (
           <PrivacyPolicyPage />
+        ) : page === "terms-and-conditions" ? (
+          <TermsAndConditionsPage />
         ) : page === "delete-account" ? (
           <DeleteMyAccountPage />
         ) : (

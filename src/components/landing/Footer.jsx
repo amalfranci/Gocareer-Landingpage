@@ -3,7 +3,7 @@ import { Twitter, Github, Linkedin, Instagram, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion-presets";
-import logo from "@/assets/gocareer-logo.png";
+import logo from "@public/Logo/logo.png";
 
 const columns = [
   {
@@ -28,6 +28,7 @@ const columns = [
       { label: "Help center", href: "#" },
       { label: "Guides", href: "#" },
       { label: "Privacy Policy", href: "/?page=privacy-policy" },
+      { label: "Terms and Conditions", href: "/?page=terms-and-conditions" },
       { label: "Delete My Account", href: "/deleteMyAccount" },
     ],
   },
@@ -45,7 +46,7 @@ export function Footer() {
           className="grid lg:grid-cols-12 gap-10"
         >
           <motion.div variants={fadeUp} custom={0} className="lg:col-span-4">
-            <img src={logo} alt="GoCareer" className="h-10 w-auto" />
+            <img src={logo} alt="GoCareer" className="h-8 w-auto" />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               Your gateway to global careers. The AI-powered platform connecting talent with
               opportunity.

@@ -58,7 +58,7 @@ export function CTA() {
                   size="lg"
                   className="bg-gradient-primary text-primary-foreground hover:opacity-90 rounded-2xl px-8 h-12 shadow-glow btn-shine"
                 >
-                  <a href="https://gocareerrecruiter.kods.app/">
+                  <a href="https://recruiter.gocareer.co/login">
                     Start Hiring <ArrowRight className="ml-1 size-4" />
                   </a>
                 </Button>
