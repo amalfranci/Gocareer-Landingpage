@@ -1,0 +1,1 @@
+var e=`/assets/hero-landscape-k41sL9dt.jpg`;export{e as t};

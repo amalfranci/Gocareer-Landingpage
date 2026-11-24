@@ -1,0 +1,10 @@
+# Point nginx root at this folder. Example location:
+
+# location / {
+#   try_files $uri $uri/ $uri/index.html =404;
+# }
+
+# Keep existing redirects:
+# /?page=privacy-policy  -> /privacy-policy/
+# /?page=terms-and-conditions -> /terms/
+# /deleteMyAccount -> /deleteMyAccount/

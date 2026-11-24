@@ -1,0 +1,1 @@
+var e=`/assets/team-CLcop-AU.jpg`,t=`/assets/mobile-B5zJqHbY.jpg`;export{e as n,t};

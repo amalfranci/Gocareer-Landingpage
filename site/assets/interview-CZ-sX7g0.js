@@ -1,0 +1,1 @@
+var e=`/assets/interview-CM3v_gdv.jpg`;export{e as t};

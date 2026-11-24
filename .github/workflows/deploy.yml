@@ -13,31 +13,22 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Project
-        run: npm run build
-
-      - name: Deploy to EC2
+      - name: Deploy static site to EC2
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_KEY }}
-          source: "dist/*"
+          source: "site/*"
           target: "/home/ubuntu/Gocareer-Landingpage"
+          strip_components: 1
 
-      - name: Restart Nginx
+      - name: Reload Nginx
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_KEY }}
           script: |
-            sudo systemctl restart nginx
+            sudo nginx -t
+            sudo systemctl reload nginx

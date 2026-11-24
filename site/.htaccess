@@ -1,0 +1,15 @@
+# Pretty routes for static multi-page site (Apache).
+# Nginx: use try_files $uri $uri/ $uri/index.html =404;
+
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# Legacy React query routes
+RewriteCond %{QUERY_STRING} (^|&)page=privacy-policy(&|$)
+RewriteRule ^$ /privacy-policy/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)page=terms-and-conditions(&|$)
+RewriteRule ^$ /terms/? [R=301,L]
+
+# /features -> /features/
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ /$1/index.html [L]
